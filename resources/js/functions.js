@@ -76,6 +76,7 @@ $(window).on('load', function () {
         let url = $(this).attr("action");
         let btnSubmit = $("input[name=btnUpdateIncome]");
         let amount = $("input[name=amount]");
+        let amount_date = $("input[name=amount_date]");
         let token = $("input[name=_token]");
         //let formData = new FormData(this);
 
@@ -85,7 +86,8 @@ $(window).on('load', function () {
             type: 'post',
             data: {
                 '_token' : token.val(),
-                'amount' : amount.val()
+                'amount' : amount.val(),
+                'amount_date' : amount_date.val()
             },
 
             beforeSend: function() {
@@ -99,6 +101,10 @@ $(window).on('load', function () {
                   icon: 'success',
                   title: data.message,
                 });
+
+                amount.val('');
+                amount_date.val('');
+
               }
               else
               {
@@ -115,7 +121,6 @@ $(window).on('load', function () {
             },
             complete: function() {
                 btnSubmit.attr("disabled", false);
-                amount.val('');
             }
           }); // end ajax
 
@@ -128,6 +133,7 @@ $(window).on('load', function () {
         let url = $(this).attr("action");
         let btnSubmit = $("input[name=btnAddIncome]");
         let amount = $("input[name=amount]");
+        let amount_date = $("input[name=amount_date]");
         let token = $("input[name=_token]");
         //let formData = new FormData(this);
 
@@ -137,7 +143,8 @@ $(window).on('load', function () {
             type: 'post',
             data: {
                 '_token' : token.val(),
-                'amount' : amount.val()
+                'amount' : amount.val(),
+                'amount_date' : amount_date.val()
             },
 
             beforeSend: function() {
@@ -151,6 +158,9 @@ $(window).on('load', function () {
                   icon: 'success',
                   title: data.message,
                 });
+
+                amount.val('');
+                amount_date.val('');
               }
               else
               {
@@ -167,7 +177,6 @@ $(window).on('load', function () {
             },
             complete: function() {
                 btnSubmit.attr("disabled", false);
-                amount.val('');
             }
           }); // end ajax
 
