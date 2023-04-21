@@ -51,10 +51,10 @@ class IncomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id) : JsonResponse
+    public function show($id)
     {
         $income =  Income::findOrFail($id);
-        return response()->json(['obj' => $income]);
+        return view('income.show', compact('income'));
     }
 
     /**

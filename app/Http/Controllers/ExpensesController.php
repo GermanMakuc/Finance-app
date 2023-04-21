@@ -50,10 +50,10 @@ class ExpensesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id) : JsonResponse
+    public function show($id)
     {
         $expense =  Expenses::findOrFail($id);
-        return response()->json(['obj' => $expense]);
+        return view('expense.show', compact('expense'));
     }
 
     /**
