@@ -105,42 +105,46 @@
 
     </div>
 
-    <div class="card-group">
-        <div class="card text-center">
-            <h5 class="card-header">Mes</h5>
-            <div class="card-body">
-                <select id="selectMonth" class="form-select form-select-lg mb-3">
-                    <option selected>Selecciona un Mes</option>
-                    @foreach ($monthArr as $month => $value)
-                        <option value="{{ $month + 1 }}">{{ $value }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card text-center">
-                <h5 class="card-header">Balance</h5>
-                <table class="table table-borderless">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">Ingresos</th>
-                            <th scope="col">Egresos</th>
-                            <th scope="col">Balance</th>
-                            <th scope="col">Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="incomeTotal">$0</td>
-                            <td id="expenseTotal">$0</td>
-                            <td id="balanceTotal">$0</td>
-                            <td id="stateTotal">No seleccionado</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <div class="col">
+        <div class="col-md-12">
+            <h2>Reporte Mensual</h2>
+            <div class="card-group">
+                <div class="card text-center">
+                    <h5 class="card-header">Mes</h5>
+                    <div class="card-body">
+                        <select id="selectMonth" class="form-select form-select-lg mb-3">
+                            <option selected>Selecciona un Mes</option>
+                            @foreach ($monthArr as $month => $value)
+                                <option value="{{ $month + 1 }}">{{ $value }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card text-center">
+                        <h5 class="card-header">Balance</h5>
+                        <table class="table table-borderless">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Ingresos</th>
+                                    <th scope="col">Egresos</th>
+                                    <th scope="col">Balance</th>
+                                    <th scope="col">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="incomeTotal">$0</td>
+                                    <td id="expenseTotal">$0</td>
+                                    <td id="balanceTotal">$0</td>
+                                    <td id="stateTotal">No seleccionado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 
 @endsection
