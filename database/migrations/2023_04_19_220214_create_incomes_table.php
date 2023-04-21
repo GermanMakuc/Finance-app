@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
             $table->integer('amount');
+            $table->date('amount_date');
             $table->timestamps();
         });
     }
