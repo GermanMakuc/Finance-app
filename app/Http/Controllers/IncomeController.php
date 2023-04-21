@@ -122,7 +122,8 @@ class IncomeController extends Controller
     public function getErrors(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'amount' => 'required|numeric'
+            'amount' => 'required|numeric',
+            'amount_date' => 'required|date'
         ]);
 
         $errorString = null;
