@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('income.create') }}">Agregar Ingresos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('expenses.create') }}">Agregar Egresos</a>
+                </li>
             </ul>
         </div>
     </div>

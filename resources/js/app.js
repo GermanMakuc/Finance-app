@@ -1,3 +1,3 @@
 import './bootstrap';
-
-import './functions';
+import './incomeFunctions';
+import './expenseFunctions';

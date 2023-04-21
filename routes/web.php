@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Income;
 use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\ExpensesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,10 @@ Route::get('income/show/{id}', [IncomeController::class, 'show'])->name('income.
 Route::post('income/delete/{id}', [IncomeController::class, 'destroy'])->name('income.delete');
 Route::post('income/update/{id}', [IncomeController::class, 'update'])->name('income.update');
 Route::post('income/store', [IncomeController::class, 'store'])->name('income.store');
+
+Route::get('expenses/create', [ExpensesController::class, 'create'])->name('expenses.create');
+Route::get('expenses/edit/{id}', [ExpensesController::class, 'edit'])->name('expenses.edit');
+Route::get('expenses/show/{id}', [ExpensesController::class, 'show'])->name('expenses.show');
+Route::post('expenses/delete/{id}', [ExpensesController::class, 'destroy'])->name('expenses.delete');
+Route::post('expenses/update/{id}', [ExpensesController::class, 'update'])->name('expenses.update');
+Route::post('expenses/store', [ExpensesController::class, 'store'])->name('expenses.store');

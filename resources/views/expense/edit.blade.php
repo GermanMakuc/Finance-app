@@ -1,20 +1,20 @@
 @extends('layout.layout')
 
-@section('title', 'Agregar Ingresos')
+@section('title', 'Editar Egreso')
 
 @section('content')
 
 <div class="row">
     <div class="col-md-12">
-        <form id="addIncome" action="{{ route('income.store') }}" method="post">
+        <form id="updateExpense" action="{{ route('expenses.update',  ['id' => $expense->id] ) }}" method="post">
 
             @csrf
-            @include('income.form')
+            @include('expense.form')
 
             <div class="row">
                 <div class="col-md-3">
                     <div class="input-group mb-3 vstack gap-2 mx-auto">
-                        <input type="submit" name="btnAddIncome" class="btn btn-secondary btn-sm" value="Agregar">
+                        <input type="submit" name="btnUpdateExpense" class="btn btn-secondary btn-sm" value="Modificar">
                     </div>
                 </div>
                 <div class="col-md-3">

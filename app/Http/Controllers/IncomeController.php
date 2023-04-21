@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Income;
+use App\Models\Expenses;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
@@ -15,8 +16,9 @@ class IncomeController extends Controller
     public function index()
     {
         $income = Income::get();
+        $expenses = Expenses::get();
 
-        return view('income.index', compact('income'));
+        return view('income.index', compact('income', 'expenses'));
     }
 
     /**
