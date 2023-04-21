@@ -20,6 +20,21 @@ $(window).on('load', function () {
         reverseButtons: false
       });
 
+      /*
+      function reloadPrices()
+      {
+        let sumIncome = 0;
+        $(".amountIncome").each(function(){
+            let price = $(this).text();
+            price = price.slice(1);
+            price = parseInt(price);
+            sumIncome += price;
+        });
+
+        $('#calculateIncome').text(sumIncome);
+      }
+      */
+
     $("button[name=deleteIncome]").on('click', function(e){
         e.preventDefault();
 

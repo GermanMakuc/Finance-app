@@ -18,7 +18,6 @@ use App\Http\Controllers\BalanceController;
 
 Route::get('/', [BalanceController::class, 'index'])->name('index');
 Route::get('/balance/{month}', [BalanceController::class, 'byMonth'])->name('balance.month');
-Route::get('/total', [BalanceController::class, 'totals'])->name('balance.totals');
 
 Route::get('income/create', [IncomeController::class, 'create'])->name('income.create');
 Route::get('income/edit/{id}', [IncomeController::class, 'edit'])->name('income.edit');

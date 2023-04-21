@@ -21,7 +21,7 @@ class BalanceController extends Controller
             'Octubre', 'Noviembre', 'Diciembre'
         );
 
-        return view('balance.index', compact('income', 'expenses','monthArr'));
+        return view('balance.index', compact('income', 'expenses', 'monthArr'));
     }
 
     public function byMonth($month) : JsonResponse
@@ -38,23 +38,6 @@ class BalanceController extends Controller
             'expenses' => $expenseMonth,
             'balance' => $balance,
             'state' => $this->getLabelBalance($balance, $incomeMonth, $expenseMonth)
-        ]);
-    }
-
-    public function totals() : JsonResponse
-    {
-
-        $totalIncomes = Income::get()->sum('amount');
-        $totalExpenses = Expenses::get()->sum('amount');
-
-        $balance = 0;
-        $balance = $totalIncomes - $totalExpenses;
-
-        return response()->json([
-            'incomes' => $totalIncomes,
-            'expenses' => $totalExpenses,
-            'balance' => $balance,
-            'state' => $this->getLabelBalance($balance, $totalIncomes, $totalExpenses),
         ]);
     }
 

@@ -10,7 +10,7 @@
         @if (count($income) > 0)
 
             <div class="col-md-6">
-                <h2>Ingresos Totales</h2>
+                <h3>Ingresos Totales</h3>
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
@@ -58,7 +58,7 @@
         @if (count($expenses) > 0)
 
             <div class="col-md-6">
-                <h2>Egresos Totales</h2>
+                <h3>Egresos Totales</h3>
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
@@ -107,7 +107,7 @@
 
     <div class="col">
         <div class="col-md-12">
-            <h2>Reporte Mensual</h2>
+            <h3>Reporte Mensual</h3>
             <div class="card-group">
                 <div class="card text-center">
                     <h5 class="card-header">Mes</h5>
