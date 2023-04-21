@@ -11,17 +11,6 @@ use Illuminate\Support\Facades\Validator;
 class IncomeController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $income = Income::get();
-        $expenses = Expenses::get();
-
-        return view('income.index', compact('income', 'expenses'));
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
