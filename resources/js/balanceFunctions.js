@@ -6,7 +6,7 @@ $(window).on('load', function () {
     $("#selectMonth").on('change', function(e){
         e.preventDefault();
 
-        let selectValue = $(this).val();
+        let select = $(this);
         let incomeTotal = $('#incomeTotal');
         let expenseTotal = $('#expenseTotal');
         let balanceTotal = $('#balanceTotal');
@@ -14,12 +14,13 @@ $(window).on('load', function () {
 
         $.ajax({
 
-            url: 'balance/'+selectValue,
+            url: 'balance/'+select.val(),
             type: 'get',
-            data: {
-                'month' : selectValue
-            },
 
+            beforeSend: function() {
+                select.attr('disabled',true);
+                $(".loading").append('<div class="text-center"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>');
+            },
             success: function(data) {
                 incomeTotal.text('$' + data.incomes);
                 expenseTotal.text('$' + data.expenses);
@@ -31,6 +32,8 @@ $(window).on('load', function () {
                 console.log(err.Message);
             },
             complete: function() {
+                select.attr('disabled',false);
+                $(".spinner-border").remove();
             }
             }); // end ajax
 

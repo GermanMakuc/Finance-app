@@ -105,10 +105,10 @@
 
     </div>
 
-    <div class="col">
+    <div class="row">
         <div class="col-md-12">
             <h3>Reporte Mensual</h3>
-            <div class="card-group">
+            <div class="card-group mb-5">
                 <div class="card text-center">
                     <h5 class="card-header">Mes</h5>
                     <div class="card-body">
@@ -118,6 +118,7 @@
                                 <option value="{{ $month + 1 }}">{{ $value }}</option>
                             @endforeach
                         </select>
+                        <div class="loading"></div>
                     </div>
                 </div>
                 <div class="card">
